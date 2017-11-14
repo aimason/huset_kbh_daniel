@@ -1,9 +1,28 @@
+// Look for .hamburger
+ let navigation = document.querySelector("nav");
+ navigation.classList.add("hide");
+ let hamburger = document.querySelector(".hamburger");
+ // On click
+ hamburger.addEventListener("click", function () {
+     // Toggle class "is-active"
+     hamburger.classList.toggle("is-active");
+     // Do something else, like open/close menu
+ });
+
+ hamburger.addEventListener("click", function () {
+     console.log("this is working");
+     navigation.classList.toggle("show");
+ })
+
+
+
+
 function getAllEvents(){
     fetch("http://youhys.dk/wordpress/wp-json/wp/v2/programmes?_embed").then(res=>res.json()).then(showEvents);
 }
 
 
-function getMenu(){
+/*function getMenu(){
     fetch("http://youhys.dk/wordpress/wp-json/wp/v2/categories").then(res=>res.json()).then(showMenu );
 }
 
@@ -11,13 +30,13 @@ function getMenu(){
     console.log(categories);
     let ct = document.querySelector("#categoriesTemplate").content;
 
- /* categories.forEach(function(category){
+  categories.forEach(function(category){
         let clone = ct.cloneNode(true);
         let parent = document.querySelector("#catMenu");
         clone.querySelector("a").textContent=category.name;
         parent.appendChild(clone);
-    });*/
-}
+    });
+  }*/
 
 function getSingleEventById(myId){
     //console.log(myId);
@@ -25,7 +44,7 @@ function getSingleEventById(myId){
 }
 
 function showSingleEvent(json){
-    //console.log(json);
+    console.log(json);
     document.querySelector("#single h1").textContent=json.title.rendered;
     document.querySelector("#single .content").innerHTML=json.content.rendered;
     document.querySelector("#single .price span").textContent=json.acf.price;
@@ -35,6 +54,10 @@ function showSingleEvent(json){
     document.querySelector("#single .start-time span").textContent=json.acf.starts_at;
     document.querySelector("#single .venue span").textContent=json.acf.location;
 }
+/*
+function goBack() {
+    window.history.back();
+}*/
 
 function showEvents(data){
     //console.log(data);
@@ -70,7 +93,7 @@ let searchParams = new  URLSearchParams(window.location.search);
 let id = searchParams.get("id");
 //console.log(id);
 
-getMenu();
+//getMenu();
 
 if(id){
     getSingleEventById(id);

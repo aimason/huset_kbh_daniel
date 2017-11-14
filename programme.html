@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -28,6 +29,62 @@
             <p class="start-time">Starts at <span></span></p>
             <p class="venue">Location: <span></span></p>
 
+        </article>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>Huset-KBH</title>
+</head>
+
+<body>
+
+    <button class="hamburger hamburger--collapse" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="programme.html">Programme</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<img class="other-image-header" src="images/logo_2.png">
+
+    <section id="list"></section>
+    <template id="eventsTemplate">
+        <article class="event">
+            <h1>
+            </h1>
+            <div class="excerpt"></div>
+            <img src="" alt="">
+            <p class="price">£<span></span></p>
+            <p><a class="read-more" href="programme.html">Read more</a></p>
+        </article>
+    </template>
+
+        <section id="single">
+        <article class="event">
+
+            <h1></h1>
+            <img src="" alt="">
+            <div class="content"></div>
+            <p class="price"><span></span> DKK</p>
+            <p class="date"></p>
+            <p class="doors-open">Doors open at <span></span></p>
+            <p class="start-time">Starts at <span></span></p>
+            <p class="venue">Location: <span></span></p>
+<!--            <button onclick="goBack()">Go Back</button>-->
         </article>
     </section>
 
